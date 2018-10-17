@@ -4,30 +4,20 @@ import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.mybatis.spring.annotation.MapperScan;
+
+import com.mexico.web.mapper.MemberMapper;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@MapperScan(basePackages ={"com.mexico.web"})
-//@EnableAutoConfiguration(exclude= {DataSourceAutoConfiguration.class})
 public class Application {
-
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
-	@Bean
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource)throws Exception{
-        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-            sessionFactory.setDataSource(dataSource);
-            return sessionFactory.getObject();
+	@Autowired MemberMapper mapper;
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(Application.class, args);
     }
-
-
 }

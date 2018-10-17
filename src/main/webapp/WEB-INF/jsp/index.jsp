@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hello Boot !!
+<h1>Hello Boot !!</h1> 
+<script>
+alert('${msg}');
+</script>
 </body>
 </html>
