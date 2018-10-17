@@ -9,7 +9,7 @@
 <body>
 <h1>Hello Boot !!</h1> 
 <script>
-alert('${msg}');
+alert('회원수 ${msg}');
 </script>
 </body>
 </html>
