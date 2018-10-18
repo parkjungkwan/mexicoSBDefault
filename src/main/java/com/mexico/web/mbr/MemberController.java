@@ -15,6 +15,7 @@ public class MemberController {
 		System.out.println("====  1  ====");
 		String num = service.countAll();
         model.addAttribute("msg", "총회원수는 "+num+" 이다");
+        //
         return "index";
     }
 }
