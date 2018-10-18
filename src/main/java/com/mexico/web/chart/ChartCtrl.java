@@ -19,5 +19,17 @@ public class ChartCtrl {
 		System.out.println("====  wordcloud  ====");
         return "tm/wordcloud";
     }
+	@GetMapping
+	@RequestMapping("/gmap")
+    public String gmap(Model model){
+		System.out.println("====  gmap  ====");
+        return "chart/gmap";
+    }
+	@GetMapping
+	@RequestMapping("/initMap")
+    public String initMap(Model model){
+		System.out.println("====  initMap  ====");
+        return "chart/initMap";
+    }
 
 }
