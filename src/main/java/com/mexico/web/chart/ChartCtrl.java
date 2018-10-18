@@ -14,10 +14,10 @@ public class ChartCtrl {
         return "chart/jewelry";
     }
 	@GetMapping
-	@RequestMapping("/worldcloud")
-    public String worldcloud(Model model){
-		System.out.println("====  worldcloud  ====");
-        return "tm/worldcloud";
+	@RequestMapping("/wordcloud")
+    public String wordcloud(Model model){
+		System.out.println("====  wordcloud  ====");
+        return "tm/wordcloud";
     }
 
 }
